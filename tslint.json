@@ -6,18 +6,12 @@
       "single",
       "jsx-double"
     ],
-    "no-console": [
-      true,
-      "dir",
-      "log",
-      "error",
-      "warn"
-    ],
     "space-before-function-paren": false,
     "interface-name": [
       true,
-      "never-prefix"
+      "always-prefix"
     ],
+    "no-console": false,
     "adjacent-overload-signatures": true,
     "member-access": [
       false

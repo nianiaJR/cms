@@ -9,7 +9,17 @@ export default (appInfo: EggAppInfo) => {
   config.keys = appInfo.name + '_1544867050896_3341';
 
   // add your egg config in here
-  config.middleware = [];
+  config.middleware = ['error', 'authorization'];
+
+  // 错误处理中间件
+  config.error = {
+    match: '/api',
+  };
+
+  // 权限验证中间件
+  config.authorization = {
+    math: '/api',
+  };
 
   config.view = {
     root: path.join(appInfo.baseDir, 'app/assets'),
@@ -41,6 +51,13 @@ export default (appInfo: EggAppInfo) => {
 
   config.security = {
     csrf: false,
+  };
+
+  config.mongoose = {
+    client: {
+      url: 'mongodb://127.0.0.1:27017/clinic',
+      options: {},
+    },
   };
 
   // add your special config in here

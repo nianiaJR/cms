@@ -1,0 +1,23 @@
+{
+  "ACCOUNT_EXIST": {
+    "MESSAGE": "账号已存在",
+    "NAME": "accountExistError"
+  },
+  "AUTHORIZATION_NEEDED": {
+    "MESSAGE": "缺少认证信息",
+    "NAME": "authorizationNeededError"
+  },
+  "ACCOUNT_PASSWORD": {
+    "MESSAGE": "账号或密码不正确",
+    "NAME": "accountPasswordError"
+  },
+  "TOKEN_FAIL": {
+    "MESSAGE": "认证信息有误或已失效",
+    "NAME": "tokenFailed"
+  },
+
+  "CUSTOMER_EXIST": {
+    "MESSAGE": "客户已存在",
+    "NAME": "customerExistError"
+  }
+}
