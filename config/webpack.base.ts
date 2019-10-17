@@ -5,13 +5,21 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const commonConfig = {
   entry: {
-    app: [path.join(__dirname, '../app/assets/index.js')],
+    app: [path.join(__dirname, '../app/assets/index.tsx')],
   },
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        use: ['babel-loader?cacheDirectory=true', 'eslint-loader'],
+        test: /\.(ts|tsx)$/,
+        use: [
+          'babel-loader?cacheDirectory=true',
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: path.join(__dirname, '../tsconfig.front.json'),
+            },
+          },
+        ],
         include: path.join(__dirname, '../app/assets'),
       },
       {
@@ -58,6 +66,9 @@ const commonConfig = {
     }),
     new webpack.HashedModuleIdsPlugin(),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+  }
 };
 
 if (process.env.npm_config_report) {

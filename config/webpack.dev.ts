@@ -8,7 +8,7 @@ const devConfig = {
   entry: {
     app: [
       'react-hot-loader/patch',
-      path.join(__dirname, '../app/assets/index.js'),
+      path.join(__dirname, '../app/assets/index.tsx'),
     ],
   },
 
@@ -30,6 +30,7 @@ const devConfig = {
     port: 8888,
     contentBase: path.join(__dirname, '../public'),
     historyApiFallback: true,
+    headers: { 'Access-Control-Allow-Origin': '*' },
     host: 'localhost',
     disableHostCheck: true,
   },
